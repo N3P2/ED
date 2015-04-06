@@ -51,4 +51,6 @@ Overall goal here is simply to examine how household energy usage varies over a 
 
 Construct the plot and save it to a PNG file with a width of 480 pixels and a height of 480 pixels.
 
+# Cautionary notes
 
+Slight changes to center the legend for plot3.png as the words in the legend will be cut off if it is set to left margin.
