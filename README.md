@@ -18,7 +18,8 @@ Global_intensity: household global minute-averaged current intensity (in ampere)
 Sub_metering_1: energy sub-metering No. 1 (in watt-hour of active energy). It corresponds to the kitchen, containing mainly a dishwasher, an oven and a microwave (hot plates are not electric but gas powered).
 Sub_metering_2: energy sub-metering No. 2 (in watt-hour of active energy). It corresponds to the laundry room, containing a washing-machine, a tumble-drier, a refrigerator and a light.
 Sub_metering_3: energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.
-Loading the data
+
+# Loading the data
 
 When loading the dataset into R, please consider the following:
 
@@ -26,6 +27,19 @@ The dataset has 2,075,259 rows and 9 columns. First calculate a rough estimate o
 
 We will only be using data from the dates 2007-02-01 and 2007-02-02. One alternative is to read the data from just those dates rather than reading in the entire dataset and subsetting to those dates.
 
-You may find it useful to convert the Date and Time variables to Date/Time classes in R using the strptime() and as.Date() functions.
+Date and Time variables are converted to Date/Time classes in R using the strptime() and as.Date() functions.
 
 Note that in this dataset missing values are coded as ?.
+
+# Files and operations
+
+All operations are done on R v3.1.2 in RStudio Desktop 0.98.1102. 
+All operations are done on R v3.1.2 (64-bit mode) in RStudio Desktop 0.98.1102. 
+
+# Making Plots
+
+Overall goal here is simply to examine how household energy usage varies over a 2-day period in February, 2007. All plots were constructed using the base plotting system.
+
+Construct the plot and save it to a PNG file with a width of 480 pixels and a height of 480 pixels.
+
+
