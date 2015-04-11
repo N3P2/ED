@@ -17,10 +17,15 @@ class_code <- readRDS("Source_Classification_Code.rds")
 # class_code = 11,717 observation of 15 variables
 
 
-pm25_year <- tapply(pm25$Emissions, pm25$year, sum)
+pm25_year <- aggregate(Emissions ~ year, pm25, sum)
 
 png("plot1.png")
-plot(names(pm25_year), pm25_year, type="l",
-     xlab="Year", ylab=expression("Total" ~ PM[2.5] ~ "Emissions (tons)"),
-     main=expression("Total US" ~ PM[2.5] ~ "Emissions by Year"))
+
+barplot(height=pm25_year$Emissions, 
+        names.arg=pm25_year$year, 
+        xlab="years", 
+        ylab=expression('total PM'[2.5]*' emission'),
+        main=expression('Total PM'[2.5]*' emissions at various years')
+        )
+
 dev.off()

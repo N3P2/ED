@@ -16,12 +16,18 @@ class_code <- readRDS("Source_Classification_Code.rds")
 # pm25 = 6,497,651 observations of 6 variables
 # class_code = 11,717 observation of 15 variables
 
-BaltimoreCity <- subset(pm25, fips == "24510")
+Baltimore <- subset(pm25, fips == "24510")
 
-pm25_year <- tapply(BaltimoreCity$Emissions, BaltimoreCity$year, sum)
+Baltimore_year <- aggregate(Emissions ~ year, Baltimore, sum)
 
 png("plot2.png")
-plot(names(pm25_year), pm25_year, type="l",
-     xlab="Year", ylab=expression("Total" ~ PM[2.5] ~ "Emissions (tons)"),
-     main=expression("Total Baltimore City" ~ PM[2.5] ~ "Emissions by Year"))
+
+barplot(
+        Baltimore_year$Emissions,
+        names.arg=Baltimore_year$year,
+        xlab="Year",
+        ylab="PM2.5 Emissions (Tons)",
+        main="Total PM2.5 Emissions From all Baltimore City Sources"
+        )
+
 dev.off()
